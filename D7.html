@@ -230,11 +230,11 @@
           */
 
       const changeColorWithRandom = function () {
-        const h2Color = document.querySelector("h2");
+        const h2Color = document.getElementById("changeMyColor");
 
         h2Color.onclick = function () {
           const randomColor =
-            "#" + Math.floor(Math.random() * 16777215).toString(16);
+            "#" + Math.floor(Math.random() * 0xffffff).toString(16);
           h2Color.style.color = randomColor;
         };
       };
@@ -245,6 +245,7 @@
             Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
           */
 
+      /*
       const deleteVowels = function () {
         const vocals = document.querySelectorAll("div");
 
@@ -256,6 +257,7 @@
       };
 
       deleteVowels();
+      */
     </script>
   </body>
 </html>
