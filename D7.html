@@ -130,42 +130,57 @@
     */
 
       const addToTheSecond = function () {
-        const newLis = document.createElement("li")
-        const addLis = document.getElementById("secondList")
-        addLis.appendChild(newLis)
+        const newLis = document.createElement("li");
+        const addLis = document.getElementById("secondList");
+        addLis.appendChild(newLis);
       };
 
-      addToTheSecond()
+      addToTheSecond();
 
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un secondo paragrafo al primo div
     */
 
       const addParagraph = function () {
-        const newP = document.createElement("p")
+        const newP = document.createElement("p");
         const addP = document.getElementsByTagName("div");
-        addP[0].appendChild(newP)
+        addP[0].appendChild(newP);
       };
 
-      addParagraph()
-      
+      addParagraph();
+
       /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
 
-      const hideFirstUl = function () {};
+      const hideFirstUl = function () {
+        const firstLis = document.getElementById("firstList");
+        const remLis = firstLis.querySelector("ul");
+        firstLis.remove(remLis);
+      };
+
+      hideFirstUl();
 
       /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-      const paintItGreen = function () {};
+      const paintItGreen = function () {
+        const backLis = document.getElementsByTagName("ul");
+        for (let i = 0; i < backLis.length; i++) {
+          backLis[i].style.backgroundColor = "green";
+        }
+      };
+
+      paintItGreen();
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-      const makeItClickable = function () {};
+      const makeItClickable = function () {
+        
+      };
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
