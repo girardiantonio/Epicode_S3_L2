@@ -181,11 +181,11 @@
       const makeItClickable = function () {
         const h1Text = document.querySelector("h1");
 
-        h1Text.addEventListener("click", function () {
+        h1Text.onclick = function () {
           const currentText = h1Text.innerText;
           const newText = currentText.slice(0, -1);
           h1Text.innerText = newText;
-        });
+        };
       };
 
       makeItClickable();
@@ -197,11 +197,11 @@
       const revealFooterLink = function () {
         const fooText = document.querySelector("footer");
 
-        fooText.addEventListener("click", function () {
+        fooText.onclick = function () {
           alert(
             "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
           );
-        });
+        };
       };
 
       revealFooterLink();
@@ -211,9 +211,7 @@
              La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
           */
 
-      const generateTable = function () {
-        
-      };
+      const generateTable = function () {};
 
       /* ESERCIZIO 12
              Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
@@ -231,13 +229,33 @@
             Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
           */
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        const h2Color = document.querySelector("h2");
+
+        h2Color.onclick = function () {
+          const randomColor =
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+          h2Color.style.color = randomColor;
+        };
+      };
+
+      changeColorWithRandom();
 
       /* EXTRA ESERCIZIO 16
             Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
           */
 
-      const deleteVowels = function () {};
+      const deleteVowels = function () {
+        const vocals = document.querySelectorAll("div");
+
+        vocals.forEach((elemento) => {
+          const testo = elemento.textContent;
+          const nuovoTesto = testo.replace(/[aeiou]/gi, "");
+          elemento.textContent = nuovoTesto;
+        });
+      };
+
+      deleteVowels();
     </script>
   </body>
 </html>
